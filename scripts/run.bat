@@ -1,0 +1,1 @@
+start /d "out/build/debug" app.exe

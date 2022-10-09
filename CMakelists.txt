@@ -1,0 +1,29 @@
+cmake_minimum_required(VERSION 3.8)
+
+project(app)
+set(CMAKE_CXX_STANDARD 20)
+
+include_directories(C:\\vcpkg\\installed\\x86-windows\\include)
+link_directories(C:\\vcpkg\\installed\\x86-windows\\lib)
+
+#include_directories(C:\\vcpkg\\installed\\x64-windows\\include)
+#link_directories(C:\\vcpkg\\installed\\x64-windows\\lib)
+
+
+add_executable(${PROJECT_NAME} src/main.cpp  )
+
+
+
+
+
+
+
+
+add_subdirectory(src/getAge)
+target_include_directories(${PROJECT_NAME} PUBLIC src/getAge/ )
+target_link_directories(${PROJECT_NAME} PRIVATE src/getAge/ )
+
+
+target_link_libraries(${PROJECT_NAME} PRIVATE getAge)
+target_link_libraries(${PROJECT_NAME} PRIVATE fmt)
+#target_link_libraries(${PROJECT_NAME} PRIVATE grpc)
